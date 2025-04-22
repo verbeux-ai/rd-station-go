@@ -139,6 +139,11 @@ type EmailData struct {
 	Email string `json:"email"`
 }
 
+type PhoneData struct {
+	Phone string `json:"phone"`
+	Type  string `json:"type,omitempty"`
+}
+
 type CreateContactData struct {
 	Birthday            *BirthdayData         `json:"birthday,omitempty"`
 	ContactCustomFields *[]ContactCustomField `json:"contact_custom_fields,omitempty"`
@@ -148,6 +153,7 @@ type CreateContactData struct {
 	LegalBases          *[]LegalBasis         `json:"legal_bases,omitempty"`
 	LinkedIn            *string               `json:"linkedin,omitempty"`
 	Name                string                `json:"name"`
+	Phones              *[]PhoneData          `json:"phones,omitempty"`
 	OrganizationID      *string               `json:"organization_id,omitempty"`
 	Skype               *string               `json:"skype,omitempty"`
 }
