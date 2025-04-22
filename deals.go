@@ -210,6 +210,7 @@ type CreateDealRequest struct {
 
 type CreateDealData struct {
 	Name             string             `json:"name"`
+	Contacts         *[]Contact         `json:"contacts,omitempty"`
 	DealCustomFields *[]interface{}     `json:"deal_custom_fields,omitempty"`
 	DealStageID      *string            `json:"deal_stage_id,omitempty"`
 	PredictionDate   *string            `json:"prediction_date,omitempty"`
