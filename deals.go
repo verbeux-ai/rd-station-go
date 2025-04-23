@@ -203,25 +203,25 @@ type CampaignData struct {
 	Deals []Deal  `json:"deals,omitempty"`
 }
 
-type CreateDealRequest struct {
-	Deal     CreateDealData `json:"deal"`
-	Campaign *CampaignData  `json:"campaign,omitempty"`
-}
-
 type SetContactsRequest struct {
 	ID string `json:"id"`
 }
 
+type CreateDealRequest struct {
+	Deal        CreateDealData       `json:"deal"`
+	SetContacts []SetContactsRequest `json:"set_contacts,omitempty"`
+	Campaign    *CampaignData        `json:"campaign,omitempty"`
+}
+
 type CreateDealData struct {
-	Name             string                `json:"name"`
-	SetContacts      *[]SetContactsRequest `json:"set_contacts,omitempty"`
-	DealCustomFields *[]interface{}        `json:"deal_custom_fields,omitempty"`
-	DealStageID      *string               `json:"deal_stage_id,omitempty"`
-	PredictionDate   *string               `json:"prediction_date,omitempty"`
-	Rating           *int                  `json:"rating,omitempty"`
-	UserID           *string               `json:"user_id,omitempty"`
-	DealProducts     *[]DealProductData    `json:"deal_products,omitempty"`
-	DealSource       *DealSourceData       `json:"deal_source,omitempty"`
+	Name             string            `json:"name"`
+	DealCustomFields []interface{}     `json:"deal_custom_fields,omitempty"`
+	DealStageID      *string           `json:"deal_stage_id,omitempty"`
+	PredictionDate   *string           `json:"prediction_date,omitempty"`
+	Rating           *int              `json:"rating,omitempty"`
+	UserID           *string           `json:"user_id,omitempty"`
+	DealProducts     []DealProductData `json:"deal_products,omitempty"`
+	DealSource       *DealSourceData   `json:"deal_source,omitempty"`
 }
 
 type CreateDealResponse struct {
