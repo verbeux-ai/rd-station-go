@@ -50,7 +50,7 @@ type ContactDeal struct {
 	ID               string `json:"id"`
 	Name             string `json:"name"`
 	PredictionDate   string `json:"prediction_date"`
-	Win              string `json:"win"`
+	Win              bool   `json:"win"`
 }
 
 type Email struct {
